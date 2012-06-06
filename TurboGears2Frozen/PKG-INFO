@@ -28,9 +28,8 @@ Description: About TurboGears2Frozen
         
         Using
         -------------------------------
-        Your application's setup.py might look like:
+        Your application's **setup.py** might look like::
         
-            #!/usr/bin/env python
             import setuptools
             from distutils.core import setup
             
@@ -40,17 +39,15 @@ Description: About TurboGears2Frozen
             setup(name='MyPackageUsingTG',
                   install_requires=(
                     """
-                    TurboGears2Frozen==0.9.6
+                    TurboGears2Frozen==2.1.5
                     """
                     ),
                     version='0.0.1',
-                    description='My package that uses Turbogears but doesn't have loads of dependencies listed',
+                    description='My package that uses Turbogears2 but doesn't have loads of dependencies listed',
                     author='Joe Bloggs',
                     author_email='joe@bloggs.c',
                     packages=find_packages(exclude=['ez_setup'])
                     )
-        
-        
 Keywords: turbogears2
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment

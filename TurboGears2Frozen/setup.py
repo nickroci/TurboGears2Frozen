@@ -28,6 +28,8 @@ setup(name='TurboGears2Frozen',
         Routes==1.12.3
         SQLAlchemy==0.7.7
         Tempita==0.5.1
+        ToscaWidgets==0.9.12
+        repoze.tm2==1.0
         TurboGears2==2.1.5
         WebError==0.10.3
         WebFlash==0.1a9
@@ -39,6 +41,9 @@ setup(name='TurboGears2Frozen',
         simplejson==2.3.0
         tg.devtools==2.1.5
         wsgiref==0.1.2
+        zope.interface==4.0.1
+        zope.sqlalchemy==0.7.1
+        transaction==1.3.0
         """
         ),
         classifiers=[
