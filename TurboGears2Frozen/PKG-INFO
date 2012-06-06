@@ -48,6 +48,18 @@ Description: About TurboGears2Frozen
                     author_email='joe@bloggs.c',
                     packages=find_packages(exclude=['ez_setup'])
                     )
+                    
+        Problems
+        -------------------------------
+        This package works for my stuff, but I expect it will not for everyone so please email me if you feel
+        that other packages should be included.
+        
+        I'll update this package as I need the updates, if you need something sooner give me a mail. 
+        
+        I'm going to keep the numbering the same as the underlying TG package, may be increment it by a fourth
+        number if a TG dependency needs updating.
+        
+        Thanks
 Keywords: turbogears2
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment
