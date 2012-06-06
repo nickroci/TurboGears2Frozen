@@ -2,83 +2,57 @@ Metadata-Version: 1.0
 Name: TurboGears2Frozen
 Version: 2.1.5
 Summary: Reference this rather than Turbogears2 as a dependency to get a consistent install with your package
-Home-page: https://github.com/nickpholden/tgext.djangoforms
+Home-page: https://github.com/nickpholden/TurboGears2Frozen
 Author: Nick Holden
 Author-email: nickpholden@gmail.com
 License: LGPL
 Description: About TurboGears2Frozen
         -------------------------
+        This is a Turbogears meta package that lists the exact packages and versions that common 
+        Turbogears installs need to run.
         
-        Turbo Django Forms is a basic package that allows you to use Django forms
-        in turbogears. You should be able to follow the django documentation to
-        deal with validation etc.
+        We list the packages here so you can make a standard setup.py without messing around with pip
+        freeze, or performing a non standard install using the Turbogears Repository.
         
-        Installing
+        Use this package if
         -------------------------------
+        Have you ever wanted to deploy a python package with Turbogears as a dependency but
+        are worried what will be installed with the single tg.devtools/Turbogears2 dependency?
         
-        tgext.djangoforms can be installed from pypi::
+        Have you ever installed Turbogears on your dev machine then come to install your package
+        that depends on Turbogears on a prod machine only to find that one of the packages
+        Turbogears depends on has changed, breaking your prod install?
         
-            pip install tgext.djangoforms
+        Do you want to tell your users to just pip install <your package> that relies on Turbogears, rather
+        that having to tell them to run a custom command first to install Turbogears from the TG Repo.
         
-        should just work for most of the users
+        Using
+        -------------------------------
+        Your application's setup.py might look like:
         
-        Enabling Turbo Django Forms
-        ----------------------------------
+            #!/usr/bin/env python
+            import setuptools
+            from distutils.core import setup
+            
+            from sys import version
+            from setuptools import find_packages
+                
+            setup(name='MyPackageUsingTG',
+                  install_requires=(
+                    """
+                    TurboGears2Frozen==0.9.6
+                    """
+                    ),
+                    version='0.0.1',
+                    description='My package that uses Turbogears but doesn't have loads of dependencies listed',
+                    author='Joe Bloggs',
+                    author_email='joe@bloggs.c',
+                    packages=find_packages(exclude=['ez_setup'])
+                    )
         
-        In your application *lib/app_globals.py* import **TDForms**::
         
-            from tgext.djangoforms import TDForms
-        
-        And call it inside the **__init__**::
-        
-            class Globals(object):
-                def __init__(self):
-                    self.tdf = TDForms()
-        
-        Creating Forms
-        ----------------------------
-        
-        Creating forms works the same as with standard Django::
-        
-            from django import forms
-    
-            class ContactForm(forms.Form):
-                subject = forms.CharField(max_length=100)
-                message = forms.CharField()
-                sender = forms.EmailField()
-                cc_myself = forms.BooleanField(required=False)
-        
-        Controller
-        ----------------------------
-        
-        You can follow most of the django forms tutorial::
-        
-            @expose('mysite.templates.index')
-            def index(self, **kw):
-                """Handle the front-page."""
-                if kw:
-                    form = ContactForm(kw)
-                    
-                    if form.is_valid():
-                        print form.cleaned_data
-                        //do stuff
-                        tg.flash("Form OK")
-                else:
-                    form = ContactForm()
-                    
-                return dict(page='Index', form=form)
-        
-        Rendering Forms
-        ----------------------------
-        
-        You can use the standard django style template notation in your Genshi template - but add a g.tdf(...)::
-        
-            <form>
-            ${g.tdf(form.as_p)}
-            <button>Submit</button>
-            </form>
-Keywords: turbogears2.extension pylons
+Keywords: turbogears2
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment
-Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development
 Classifier: Framework :: TurboGears

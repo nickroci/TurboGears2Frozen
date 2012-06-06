@@ -51,6 +51,7 @@ setup(name='TurboGears2Frozen',
         description='Reference this rather than Turbogears2 as a dependency to get a consistent install with your package',
         author='Nick Holden',
         author_email='nickpholden@gmail.com',
+        url='https://github.com/nickpholden/TurboGears2Frozen',
         license='LGPL',
         packages=find_packages(exclude=['ez_setup'])
         )
