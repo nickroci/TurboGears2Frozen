@@ -28,6 +28,10 @@ Description: About TurboGears2Frozen
         
         Using
         -------------------------------
+        TG2Frozen has all the standard dependancies apart from MYSQL-python (as you may be using a different DB) and it
+        does not contain a specific sqlalchemy version, as there are backward compatibility issues and you may want to
+        use a particular version.
+        
         Your application's **setup.py** might look like::
         
             import setuptools
@@ -40,6 +44,8 @@ Description: About TurboGears2Frozen
                   install_requires=(
                     """
                     TurboGears2Frozen==2.1.5
+                    SQLAlchemy==0.7.0
+                    MySQL-python==1.2.3
                     """
                     ),
                     version='0.0.1',

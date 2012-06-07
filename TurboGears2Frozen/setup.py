@@ -19,14 +19,13 @@ setup(name='TurboGears2Frozen',
         Genshi==0.6
         Mako==0.7.0
         MarkupSafe==0.15
-        MySQL-python==1.2.3
         Paste==1.7.5.1
         PasteDeploy==1.3.4
         PasteScript==1.7.5
         Pygments==1.4
         Pylons==1.0
         Routes==1.12.3
-        SQLAlchemy==0.7.7
+        SQLAlchemy
         Tempita==0.5.1
         ToscaWidgets==0.9.12
         repoze.tm2==1.0
