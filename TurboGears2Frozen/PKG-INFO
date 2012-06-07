@@ -1,7 +1,7 @@
 Metadata-Version: 1.0
 Name: TurboGears2Frozen
 Version: 2.1.5
-Summary: Reference this rather than Turbogears2 as a dependency to get a consistent install with your package
+Summary: Reference this rather than Turbogears2 as a dependency to get a consistent install with your TG2 project
 Home-page: https://github.com/nickpholden/TurboGears2Frozen
 Author: Nick Holden
 Author-email: nickpholden@gmail.com
