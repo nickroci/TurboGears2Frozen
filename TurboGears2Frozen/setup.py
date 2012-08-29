@@ -35,7 +35,7 @@ setup(name='TurboGears2Frozen',
         WebTest==1.3.4
         crank==0.6.4
         decorator==3.3.3
-        nose==1.1.2
+        nose
         repoze.lru==0.5
         repoze.tm2==1.0
         repoze.who==2.0
